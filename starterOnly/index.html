@@ -54,7 +54,7 @@
 
       <div class="bground">
         <div class="content">
-          <span class="close" onclick="closeModal()"></span>
+          <span class="close"></span>
           <div class="modal-body" id="modal">
             <form
               name="reserve"
@@ -190,7 +190,7 @@
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
-                  checked
+                  onclick="checkCondition()"
                 />
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
@@ -209,7 +209,7 @@
                 type="submit"
                 class="button"
                 value="C'est parti"
-                onclick="validate()"
+                
               />
             </form>
           </div>
