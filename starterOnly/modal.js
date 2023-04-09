@@ -13,6 +13,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 var content = ""
+var re = /^[A-Za-z]+$/;
 var modal = document.getElementById("modal")
 //FORM ELEMENTS
 FirstName = document.getElementById("first");
@@ -51,7 +52,7 @@ function closeModal(){
 
 function checkFirstName(){
   valueFirstName = FirstName.value
-  if (valueFirstName.length < 4 || valueFirstName == null) {
+  if (valueFirstName.length < 4 || valueFirstName == null || !re.test(valueFirstName)) {
     formData[0].setAttribute("data-error", "Veuillez entrer 4 caractères ou plus pour le champ du prénom.");
     formData[0].setAttribute("data-error-visible", "true");
     data['state'] = true;
@@ -66,7 +67,7 @@ function checkFirstName(){
 
 function checkName(){
   valueName = LastName.value
-  if (valueName.length < 4 || valueName == null) {
+  if (valueName.length < 4 || valueName == null || !re.test(valueName)) {
     formData[1].setAttribute("data-error", "Veuillez entrer 4 caractères ou plus pour le champ du nom.");
     formData[1].setAttribute("data-error-visible", "true");
     data['state'] = true;
